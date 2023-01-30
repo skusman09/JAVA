@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.Scanner;  // importing java class called "Scanner"
 
 class Conditional_Statement {
 
@@ -74,7 +74,7 @@ class Conditional_Statement {
 
         System.out.println("---------if statement-----------");
         System.out.println("Enter any number: ");
-        int num = sc.nextInt();
+        int num = sc.nextInt();        
         obj.if_statement(num);
 
         System.out.println("----------if else statement----------");

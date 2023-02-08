@@ -5,11 +5,11 @@ public class Overloading {
     }
 
     public void div(int a, int b, int c) { // three int parameters
-        System.out.println(a / b / c);
+        System.out.println(a / b - c);
     }
 
     public void div(double p, double q) { // two double parameters
-        System.out.println(p / q);
+        System.out.println(p * q);
     }
 
     public static void main(String args[]) {

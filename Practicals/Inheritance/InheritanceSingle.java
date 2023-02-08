@@ -15,7 +15,7 @@ class Home { // Base Class or Parent Class
     }
 }
 
-class FirstTenant extends Home { // Sub Class Or Chield Class
+class FirstTenant extends Home { // Sub Class Or Child Class
     String name;
     int maintenance;
     String parking;

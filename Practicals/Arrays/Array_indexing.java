@@ -1,6 +1,6 @@
 // Take Input From User And Print Array
 
-import java.util.*;;
+import java.util.*;
 
 public class Array_indexing {
     public static void main(String[] args) {

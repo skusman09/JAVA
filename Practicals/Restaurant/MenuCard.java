@@ -68,7 +68,7 @@ class MenuCard {
     System.out.println("--Enter Menu Option--");
     int option = sc.nextInt();
 
-    // Printing Menu Of Menu
+    // Printing Menu Options
     switch (option) {
       case 1: // Option 01
         System.out.println(Menu[option - 1]);

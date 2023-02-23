@@ -1,4 +1,4 @@
-/*
+/* 10/02/2023
  Scenario: In a company there are employees with two designations Manager and Trainee.
  Both employees share the same set of attributes and basic salary calculation logic is same
  but the basic salary of trainee and manager are different.

@@ -62,7 +62,7 @@ public class StringExample {
     // Using reverse Method
     System.out.println("3. Reversing the entire string: " + strbuff.reverse());
 
-    System.out.println(strbuff.reverse()); // For Problem-4 we Need To Reverse Back Problem-3
+    strbuff.reverse(); // For Problem-4 we Need To Reverse Back Problem-3
     
     // 4. Replacing the word "Buffer" with "Builder".
     // Using replace Method

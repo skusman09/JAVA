@@ -1,3 +1,4 @@
+// Friday- 09/03/2023
 package JAVA_LAB.Lab6;
 
 public class StringExample {

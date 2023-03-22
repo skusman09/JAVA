@@ -1,3 +1,7 @@
+// Multiple Inheritance Using Interface
+
+package Inheritance;
+
 interface Sports { // parent1 interface
 
     public void homeTeam(String name);

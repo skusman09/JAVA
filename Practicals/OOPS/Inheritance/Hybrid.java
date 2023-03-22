@@ -1,7 +1,10 @@
 // Hybrid Is a Mixture Of Single Inheritance, Multilevel Inheritance, And Hierarachical Inheritance
 
-// -------------Single Level-------------\\
-class Home { // Base Class or Parent Class
+// -------------01- Single Level-------------\\
+
+package Inheritance;
+
+class Room { // Base Class or Parent Class
     String color;
     String rooms;
     int deposit;
@@ -13,7 +16,7 @@ class Home { // Base Class or Parent Class
     }
 }
 
-class FirstTenant extends Home { // Sub Class Or Child Class
+class Tenant1 extends Room { // Sub Class Or Child Class
     String name;
     int maintenance;
     String parking;
@@ -30,8 +33,8 @@ class FirstTenant extends Home { // Sub Class Or Child Class
     }
 }
 
-// -----------------Multilevel-----------------\\
-class Grandpa { // class 1
+// -----------------02- Multilevel-----------------\\
+class Grndpa { // class 1
     String name;
     String marriageDate;
     String hairColor;
@@ -51,7 +54,7 @@ class Grandpa { // class 1
     }
 }
 
-class Father extends Grandpa { // class 2 extends class 1
+class Fathr extends Grndpa { // class 2 extends class 1
     public void father() {
         System.out.println("\nIm Father");
         System.out.println("MarriageDate: " + this.marriageDate);
@@ -64,7 +67,7 @@ class Father extends Grandpa { // class 2 extends class 1
 
 }
 
-class Son extends Father { // class 3 extends class 1
+class Sons extends Fathr { // class 3 extends class 1
     public void son() {
         System.out.println("\nIm Son");
         System.out.println("Age: " + this.age);
@@ -75,15 +78,15 @@ class Son extends Father { // class 3 extends class 1
 
 }
 
-// -------------------Hierarchical------------------\\
-class Engineering {
+// -------------------03- Hierarchical------------------\\
+class Engineerings {
     int year = 4;
     String university = "Mumbai University";
     String location = "Mumbai, Maharashtra";
     int seats;
 }
 
-class ComputerScience extends Engineering {
+class IT extends Engineerings {
     String name;
     int id;
     String college;
@@ -93,7 +96,7 @@ class ComputerScience extends Engineering {
         System.out.println("Name: " + this.name);
         System.out.println("id: " + this.id);
         System.out.println("college: " + this.college);
-        System.out.println("Seats Available : " + this.seats);// Invoking From Parent Class
+        System.out.println("Seats Available : " + (this.seats = 60));// Invoking From Parent Class
         System.out.println("Year Of Engineering: " + this.year); // Invoking From Parent Class
         System.out.println("University Name: " + this.university);// Invoking From Parent Class
         System.out.println("University Location: " + this.location);// Invoking From Parent Class
@@ -101,7 +104,7 @@ class ComputerScience extends Engineering {
     }
 }
 
-class Electrincal extends Engineering {
+class Electrincals extends Engineerings {
     String name;
     int id;
     String college;
@@ -111,7 +114,7 @@ class Electrincal extends Engineering {
         System.out.println("Name: " + this.name);
         System.out.println("id: " + this.id);
         System.out.println("college: " + this.college);
-        System.out.println("Seats Available : " + this.seats);// Invoking From Parent Class
+        System.out.println("Seats Available : " + (this.seats = 70));// Invoking From Parent Class
         System.out.println("Year Of Engineering: " + this.year); // Invoking From Parent Class
         System.out.println("University Name: " + this.university);// Invoking From Parent Class
         System.out.println("University Location: " + this.location);// Invoking From Parent Class
@@ -120,7 +123,7 @@ class Electrincal extends Engineering {
     }
 }
 
-class Mechanical extends Engineering {
+class Mechanicals extends Engineerings {
     String name;
     int id;
     String college;
@@ -130,7 +133,7 @@ class Mechanical extends Engineering {
         System.out.println("Name: " + this.name);
         System.out.println("id: " + this.id);
         System.out.println("college: " + this.college);
-        System.out.println("Seats Available : " + this.seats);// Invoking From Parent Class
+        System.out.println("Seats Available : " + (this.seats = 80));// Invoking From Parent Class
         System.out.println("Year Of Engineering: " + this.year); // Invoking From Parent Class
         System.out.println("University Name: " + this.university);// Invoking From Parent Class
         System.out.println("University Location: " + this.location);// Invoking From Parent Class
@@ -143,9 +146,9 @@ class Mechanical extends Engineering {
 public class Hybrid {
     public static void main(String[] args) {
 
-        // -------------Single Level-------------\\
+        // -------------01- Single Level-------------\\
         System.out.println("Single Level Inheritance");
-        FirstTenant ft = new FirstTenant();
+        Tenant1 ft = new Tenant1();
         ft.name = "Umar";
         ft.color = "Light-Yellow";
         ft.rooms = "2BHK";
@@ -156,9 +159,10 @@ public class Hybrid {
         ft.homeInfo();
         ft.firstTenant();
 
-        // -----------------Multilevel-----------------\\
+        // -----------------02- Multilevel-----------------\\
         System.out.println("\nMultilevel Inheritance");
-        Grandpa grandpa = new Grandpa();
+
+        Grndpa grandpa = new Grndpa();
         grandpa.marriageDate = "10-02-1940";
         grandpa.hairColor = "white";
         grandpa.eyeColor = "Brown";
@@ -167,7 +171,7 @@ public class Hybrid {
         grandpa.kids = 3;
         grandpa.grandpa();
 
-        Father father = new Father();
+        Fathr father = new Fathr();
         father.marriageDate = "28-06-1980";
         father.age = 40;
         father.eyeColor = "blue";
@@ -176,24 +180,24 @@ public class Hybrid {
         father.hairColor = "Black";
         father.father();
 
-        Son son = new Son();
+        Sons son = new Sons();
         son.age = 15;
         son.eyeColor = grandpa.eyeColor;
         son.height = father.height;
         son.hairColor = father.hairColor;
         son.son();
 
-        // -------------------Hybrid------------------\\
+        // -------------------03- Hybrid------------------\\
         System.out.println("\nHybrid Inheritance");
-        ComputerScience computer = new ComputerScience();
-        computer.name = "Usman";
-        computer.id = 1626415;
-        computer.college = "M.H. Saboo Siddik College of Engineering";
-        computer.fees = 120000;
-        computer.info();
+        IT BE_IT = new IT();
+        BE_IT.name = "Usman";
+        BE_IT.id = 1626415;
+        BE_IT.college = "M.H. Saboo Siddik College of Engineering";
+        BE_IT.fees = 120000;
+        BE_IT.info();
         System.out.println("\n");
 
-        Electrincal electrincal = new Electrincal();
+        Electrincals electrincal = new Electrincals();
         electrincal.name = "Umar";
         electrincal.id = 3646843;
         electrincal.college = "K. J. Somaiya Institute of Engineering and Information Technology";
@@ -201,7 +205,7 @@ public class Hybrid {
         electrincal.info();
         System.out.println("\n");
 
-        Mechanical mechanical = new Mechanical();
+        Mechanicals mechanical = new Mechanicals();
         mechanical.name = "Maviya";
         mechanical.id = 1626415;
         mechanical.college = "The Xavier Institute of Engineering";

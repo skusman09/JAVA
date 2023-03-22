@@ -14,6 +14,8 @@ else if all are same then you need to take more number of arguments than previou
 ****************************It is called compile time polymorphism****************************
  */
 
+package Polymorphism;
+
 class Mobile {
     String brand;
     String display;

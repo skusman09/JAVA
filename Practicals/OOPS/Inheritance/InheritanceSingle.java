@@ -5,6 +5,8 @@ base class
 drived class // only one drived class
  */
 
+package Inheritance;
+
 class Home { // Base Class or Parent Class
     String color;
     String rooms;
@@ -12,6 +14,7 @@ class Home { // Base Class or Parent Class
     int rent;
 
     public void homeInfo() {
+        System.out.println("Owner Name: Usman");
     }
 }
 

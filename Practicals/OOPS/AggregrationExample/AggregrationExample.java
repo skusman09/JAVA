@@ -1,3 +1,5 @@
+package AggregrationExample;
+
 class Idproof { // class1
 	int inum;
 	String city;

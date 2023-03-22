@@ -1,11 +1,12 @@
 /* 2- Inheritance
- a) Multi Level Inheritance    
+ b) Multi Level Inheritance    
 base class        a
     ||
 drived class   b -> a
     ||         
-drived class   c  -> a // more than one drived class   
+drived class   c  -> b // more than one drived class   
  */
+package Inheritance;
 
 class Grandpa { // class 1
     String name;

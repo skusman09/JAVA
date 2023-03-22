@@ -1,6 +1,9 @@
-// Inheritance Examle
+// Inheritance Example
 
 // Base or Super Class
+
+package Inheritance;
+
 class Employee {
 	int salary = 60000;
 }
@@ -17,4 +20,7 @@ class Inheritance {
 		System.out.println("Salary : " + E1.salary
 				+ "\nBenefits : " + E1.benefits);
 	}
+
+    public class computerscience {
+    }
 }

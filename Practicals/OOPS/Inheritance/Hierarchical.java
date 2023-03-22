@@ -6,30 +6,32 @@ drived class   b -> a
     ||         
 drived class   c  -> a // Tow Sub(Child) Class Have Same Base(Parent) Class
 */
+package Inheritance;
 
 class Engineering {
     int year = 4;
     String university = "Mumbai University";
     String location = "Mumbai, Maharashtra";
-    int seats = 100;
+    int seats;
 }
 
-class ComputerScience extends Engineering {
+class Computerscience extends Engineering {
     String name;
     int id;
     String college;
     int fees;
 
     public void info() {
-        System.out.println("Year Of Engineering: " + this.year); // Invoking From Parent Class
-        System.out.println("University Name: " + this.university);// Invoking From Parent Class
-        System.out.println("University Location: " + this.location);// Invoking From Parent Class
-        System.out.println("Seats Available : " + this.seats);// Invoking From Parent Class
-
         System.out.println("Name: " + this.name);
         System.out.println("id: " + this.id);
         System.out.println("college: " + this.college);
         System.out.println("fees: " + this.fees);
+
+        System.out.println("Year Of Engineering: " + this.year); // Invoking From Parent Class
+        System.out.println("University Name: " + this.university);// Invoking From Parent Class
+        System.out.println("University Location: " + this.location);// Invoking From Parent Class
+        System.out.println("Seats Available : " + (this.seats = 70));// Invoking From Parent Class
+
     }
 }
 
@@ -40,16 +42,16 @@ class Electrincal extends Engineering {
     int fees;
 
     public void info() {
-        System.out.println("Year Of Engineering: " + this.year); // Invoking From Parent Class
-        System.out.println("University Name: " + this.university);// Invoking From Parent Class
-        System.out.println("University Location: " + this.location);// Invoking From Parent Class
-        System.out.println("Seats Available : " + this.seats);// Invoking From Parent Class
-
         System.out.println("Name: " + this.name);
         System.out.println("id: " + this.id);
         System.out.println("college: " + this.college);
         System.out.println("fees: " + this.fees);
+        System.out.println("Year Of Engineering: " + this.year); // Invoking From Parent Class
+        System.out.println("University Name: " + this.university);// Invoking From Parent Class
+        System.out.println("University Location: " + this.location);// Invoking From Parent Class
+        System.out.println("Seats Available : " + (this.seats = 75));// Invoking From Parent Class
     }
+
 }
 
 class Mechanical extends Engineering {
@@ -59,21 +61,21 @@ class Mechanical extends Engineering {
     int fees;
 
     public void info() {
-        System.out.println("Year Of Engineering: " + this.year); // Invoking From Parent Class
-        System.out.println("University Name: " + this.university);// Invoking From Parent Class
-        System.out.println("University Location: " + this.location);// Invoking From Parent Class
-        System.out.println("Seats Available : " + this.seats);// Invoking From Parent Class
-
         System.out.println("Name: " + this.name);
         System.out.println("id: " + this.id);
         System.out.println("college: " + this.college);
         System.out.println("fees: " + this.fees);
+
+        System.out.println("Year Of Engineering: " + this.year); // Invoking From Parent Class
+        System.out.println("University Name: " + this.university);// Invoking From Parent Class
+        System.out.println("University Location: " + this.location);// Invoking From Parent Class
+        System.out.println("Seats Available : " + (this.seats = 65));// Invoking From Parent Class
     }
 }
 
 public class Hierarchical {
     public static void main(String[] args) {
-        ComputerScience computer = new ComputerScience();
+        Computerscience computer = new Computerscience();
         computer.name = "Usman";
         computer.id = 1626415;
         computer.college = "M.H. Saboo Siddik College of Engineering";

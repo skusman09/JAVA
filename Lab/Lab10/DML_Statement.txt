@@ -1,0 +1,23 @@
+3.DML Statement
+a.Write a SQL statement to insert a record with your own value into the table countries against each columns.
+
+mysql> INSERT INTO country_new (con_id, country_name, region_id)
+    -> VALUES ('I9', 'INDIA', 4562);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_office |
++------------------+
+| country_new      |
+| job_history      |
+| jobs             |
++------------------+
+
+mysql> select * from country_new;
++--------+--------------+-----------+
+| con_id | country_name | region_id |
++--------+--------------+-----------+
+| I9     | INDIA        |      4562 |
++--------+--------------+-----------+
+

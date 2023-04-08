@@ -1,0 +1,93 @@
+2.Alter Table
+a.Write a SQL statement to add a foreign key constraint named fk_job_id on job_id column of 
+job_history table referencing to the primary key job_id of jobs table.
+
+mysql> alter table job_history
+    -> ADD CONSTRAINT fk_job_id
+    -> FOREIGN KEY (job_id)
+    -> REFERENCES jobs(job_id);
+Query OK, 0 rows affected (0.23 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc job_history;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| employee_id   | int         | NO   | PRI | NULL    |       |
+| start_date    | date        | NO   |     | NULL    |       |
+| end_date      | date        | NO   |     | NULL    |       |
+| job_id        | varchar(10) | YES  | MUL | NULL    |       |
+| department_id | varchar(10) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+
+_______________________________________________________________________________________________
+
+b.Write a SQL statement to rename the table countries to country_new.
+
+// ******Before RENAME****
+mysql> show tables;
++------------------+
+| Tables_in_office |
++------------------+
+| countries        |
+| job_history      |
+| jobs             |
++------------------+
+
+mysql> ALTER TABLE countries
+    -> RENAME TO country_new;
+Query OK, 0 rows affected (0.31 sec)
+
+// ******After RENAME****
+mysql> show tables;
++------------------+
+| Tables_in_office |
++------------------+
+| country_new      |
+| job_history      |
+| jobs             |
++------------------+
+
+_______________________________________________________________________________________________
+
+c.Write a SQL statement to change the name of the column country_id to con_id, 
+keeping the data type and size same.
+
+// ******Before RENAME****
+mysql> desc countries;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| country_id   | varchar(2)  | NO   | PRI | NULL    |       |
+| country_name | varchar(40) | YES  |     | NULL    |       |
+| region_id    | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+
+mysql> ALTER TABLE country_new
+    -> RENAME COLUMN country_id TO con_id;
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> show tables;
++------------------+
+| Tables_in_office |
++------------------+
+| country_new      |
+| job_history      |
+| jobs             |
++------------------+
+3 rows in set (0.00 sec)
+
+// ******After RENAME****
+mysql> desc country_new;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| con_id       | varchar(2)  | NO   | PRI | NULL    |       |
+| country_name | varchar(40) | YES  |     | NULL    |       |
+| region_id    | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+
+
+
+

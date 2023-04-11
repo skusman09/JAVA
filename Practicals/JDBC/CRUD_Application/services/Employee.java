@@ -25,7 +25,7 @@ public class Employee {
 			boolean result = s.execute(query);
 
 			if (!result) {
-				System.out.println(result + "TABLE CREATED");
+				System.out.println("TABLE CREATED");
 			} else {
 				System.err.println("TABLE NOT CREATED");
 			}
@@ -95,9 +95,9 @@ public class Employee {
 			int res = ps.executeUpdate();
 
 			if (res >= 1) {
-				System.out.println("Deleted");
+				System.out.println("Record Deleted Successfully");
 			} else {
-				System.err.println("Not Deleted");
+				System.err.println("Record Not Delete");
 			}
 			con.close();
 		} catch (SQLException e) {
@@ -105,22 +105,94 @@ public class Employee {
 		}
 	}
 
-	// 05-> Retrieve(READ) Data
+	// 05-> Retrieve(READ) Data By ID
 	public static void retrieveData(int empId) {
 		try {
 			con = JDBC.getcon();
 
-			ps = con.prepareStatement("SELECT * FROM Employee where empId = ?");
+			ps = con.prepareStatement("SELECT * FROM Employee WHERE empId = ?");
 			ps.setInt(1, empId);
 			ResultSet res = ps.executeQuery();
-			while (res.next()) {
-				System.out.println(
-						res.getInt(1) + "\t" + res.getString(2) + "\t" + res.getString(3) + "\t" + res.getString(4));
+			if (res.next()) {
+				do {
+					System.out.println(res.getInt(1) + "\t" + res.getString(2) + "\t" + res.getString(3) + "\t"
+							+ res.getString(4));
+				} while (res.next());
+			} else {
+				System.out.println("Record Not Found");
 			}
+
+			con.close();
+		} catch (
+
+		SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	// 06-> Retrieve Data By Name
+	public static void retrieveName(String empName) {
+		try {
+			con = JDBC.getcon();
+
+			ps = con.prepareStatement("SELECT * FROM Employee WHERE empName = ?");
+			ps.setString(1, empName);
+
+			ResultSet res = ps.executeQuery();
+
+			if (res.next()) {
+				do {
+					System.out.println(res.getInt(1) + "\t" + res.getString(2) + "\t" + res.getString(3) + "\t"
+							+ res.getString(4));
+				} while (res.next());
+			} else {
+				System.out.println("Record Not Found");
+			}
+
 			con.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
+	}
+
+	// 07-> Show All Record
+	public static void showAllRec() {
+		try {
+			con = JDBC.getcon();
+			ps = con.prepareStatement("SELECT * FROM Employee");
+			ResultSet res = ps.executeQuery();
+			while (res.next()) {
+				System.out.println(
+						res.getInt(1) + "\t" + res.getString(2) + "\t" + res.getString(3) + "\t" + res.getString(4));
+			}
+
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void admin(String userName, String password) {
+		try {
+			con = JDBC.getcon();
+			ps = con.prepareStatement("SELECT * FROM admin");
+			ResultSet res = ps.executeQuery();
+			while (res.next()) {
+				if (res.getString(1).equals(userName) && res.getString(2).equals(password)) {
+					System.out.println("Username And Password Matched");
+					CRUD_App.crud();
+
+				} else {
+					System.out.println("Username And Password Doesn't Matched");
+				}
+			}
+
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

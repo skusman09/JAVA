@@ -180,14 +180,18 @@ public class Employee {
 			con = JDBC.getcon();
 			ps = con.prepareStatement("SELECT * FROM admin");
 			ResultSet res = ps.executeQuery();
-			while (res.next()) {
-				if (res.getString(1).equals(userName) && res.getString(2).equals(password)) {
-					System.out.println("Username And Password Matched");
-					CRUD_App.crud();
 
-				} else {
-					System.out.println("Username And Password Doesn't Matched");
-				}
+			boolean flag = false;
+			while (res.next()) {
+				if (res.getString(1).equals(userName) && res.getString(2).equals(password))
+					flag = true;
+			}
+
+			if (flag) {
+				System.out.println("Username And Password Matched");
+				CRUD_App.crud();
+			} else {
+				System.out.println("Username And Password Doesn't Matched");
 			}
 
 			con.close();

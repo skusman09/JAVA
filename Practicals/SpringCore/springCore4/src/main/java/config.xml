@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- bean definitions here -->
+	<!-- Employee-1 -->
+	<bean id="emp1" class="emp.Employee">
+		<!-- 1 -->
+		<property name="empId" value="101" />
+
+		<!-- 2 -->
+		<property name="empName" value="Usman" />
+
+		<!-- 3 -->
+		<property name="salary" value="700000" />
+
+		<!-- 4 -->
+		<property name="empMobNum">
+			<list>
+				<value>7735745870</value>
+				<value>8080504075</value>
+			</list>
+		</property>
+
+		<!-- 5 -->
+		<property name="empAddress">
+			<list>
+				<value>Mahim</value>
+				<value>Bandra</value>
+			</list>
+		</property>
+
+		<!-- 6 -->
+		<property name="deptDetails">
+			<map>
+				<entry key="SAMSUNG" value="Software Developer" />
+				<entry key="APPLE" value="Service Manager" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- Employee-2 -->
+	<bean id="emp2" class="emp.Employee">
+		<!-- 1 -->
+		<property name="empId" value="102" />
+
+		<!-- 2 -->
+		<property name="empName" value="Yahya" />
+
+		<!-- 3 -->
+		<property name="salary" value="900000" />
+
+		<!-- 4 -->
+		<property name="empMobNum">
+			<list>
+				<value>8907080908</value>
+				<value>9987080780</value>
+			</list>
+		</property>
+
+		<!-- 5 -->
+		<property name="empAddress">
+			<list>
+				<value>Dadar</value>
+				<value>Kurla</value>
+			</list>
+		</property>
+
+		<!-- 6 -->
+		<property name="deptDetails">
+			<map>
+				<entry key="HONDA" value="Mechanical Engg" />
+				<entry key="BMW" value="Interior Work" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- Mobile And Sim Class -->
+	<!-- Sim Class -->
+	<bean id="sim1" class="mobileSim.Sim">
+		<property name="simId" value="891004234814455936F" />
+		<property name="simName" value="Airtel" />
+		<property name="number" value="8080907083" />
+	</bean>
+
+	<!-- Mobile Class -->
+	<bean id="mob1" class="mobileSim.Mobile">
+		<property name="mobBrand" value="Apple"></property>
+		<property name="mobModel" value="iPhone14"></property>
+		<property name="mobColor" value="Rose Gold"></property>
+		<property name="screenSize" value="6.1"></property>
+		<property name="mobPrice" value="70000"></property>
+		<!-- Invoking Object Of 'Sim Class' In 'Mobile Class' Reference To sim1 -->
+		<property name="sim" ref="sim1"></property>
+	</bean>
+
+</beans>

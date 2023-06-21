@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- bean definitions here -->
+
+	<!-- <bean id="mob1" class="com.app.Mobile"> <property name="mobileBrand"> 
+		<value>iPhone14</value> </property> <property name="mobileColor"> <value>Red</value> 
+		</property> <property name="mobilePrice"> <value>1000000</value> </property> 
+		<property name="screenSize"> <value>6.06 inches</value> </property> </bean> 
+		<bean id="mob2" class="com.app.Mobile"> <property name="mobileBrand" value="Samsung 
+		S22" /> <property name="mobileColor" value="Black" /> <property name="mobilePrice" 
+		value="60000" /> <property name="screenSize" value="6.1 inches" /> </bean> -->
+
+	<!-- Constructor Injector -->
+	<bean id="mob3" class="com.app.Mobile">
+		<constructor-arg value="6.73 inches" index="3" />
+		<constructor-arg value="80000" index="2" />
+		<constructor-arg value="Ocean Black" index="1" />
+		<constructor-arg value="Xiami 13" index="0" />
+	</bean>
+
+</beans>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- bean definitions here -->
+	<context:annotation-config />
+
+	<!-- "byName" id should be same As pojo class obj Otherwise No Work -->
+	<!-- <bean id="sim" class="Mobile_Sim.Sim"> <property name="simName" value="Airtel" 
+		/> </bean> -->
+
+	<!-- "byConstructor" No Need ID But We Need To Create Constructor Of sim 
+		In Mobile Class -->
+	<!-- <bean class="Mobile_Sim.Sim"> <property name="simName" value="Airtel" 
+		/> </bean> -->
+
+	<!-- "byType" Also No Need ID -->
+	<bean class="Mobile_Sim.Sim">
+		<property name="simName" value="Airtel" />
+	</bean>
+
+	<!-- <bean id="mob1" class="Mobile_Sim.Mobile" autowire="byName"> -->
+	<!-- <bean id="mob1" class="Mobile_Sim.Mobile" autowire="constructor"> -->
+	<bean id="mob1" class="Mobile_Sim.Mobile" autowire="byType">
+		<property name="brand" value="iPhone" />
+		<property name="mobileColor" value="Ocean Black" />
+		<property name="model" value="iPhone14" />
+		<property name="screenSize" value="6.1 Inches" />
+	</bean>
+
+
+</beans>
